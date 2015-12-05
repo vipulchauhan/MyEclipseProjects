@@ -1,0 +1,60 @@
+<div ng-controller="fdDashBoardCtrl">
+	<div class="container cubeMainPanel" id="Engine"
+		ng-init="loadFixedDeposites()">
+
+
+
+		<div class="panel" id="fixedDepositePanel">
+			<div class="panel-heading">
+
+
+				<!-- 				</div> -->
+
+				<div class="panel-body" style="padding-bottom: 20px">
+					<div class="refreshdata-block">
+						<div class="refreshblock" hidden="hidden"></div>
+						<div class="refreshwrapper" hidden="hidden">
+							<div id="refreshWait"></div>
+						</div>
+						<table class="table table-striped" id="fixedDepositeTable"
+							style="max-height: 250px;">
+
+							<thead>
+								<tr>
+									<th></th>
+									<th>Account No</th>
+									<th>Start Date</th>
+									<th>End Date</th>
+									<th>Start Balance</th>
+									<th>End Balance</th>
+									<th>Interest Rate</th>
+
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr ng-repeat="fixedDeposite in fixedDepositeArray"
+									ng-init="$last ? tableDrawEnded(): angular.noop()">
+									<td><input type="checkbox" name="fixedDeposite"
+										ng-model="fixedDeposite.isSelected"></td>
+									<td><span ng-bind="fixedDeposite.accountNo"></span></td>
+									<td><span ng-bind="fixedDeposite.startDate"></span></td>
+									<td><span ng-bind="fixedDeposite.endDate"></span></td>
+									<td><span ng-bind="fixedDeposite.balance"></span></td>
+									<td><span ng-bind="fixedDeposite.endBalance"></span></td>
+									<td><span ng-bind="fixedDeposite.interestRate"></span></td>
+
+								</tr>
+							</tbody>
+						</table>
+
+
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>

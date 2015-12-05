@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="mySavingsApp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
+
+<!-- bootstrap -->
+<script src="frameworks/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="frameworks/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+
+<!-- Angularjs -->
+<script src="frameworks/angularjs/angular.min.js"></script>
+<script src="frameworks/angularjs/angular-route.min.js"></script>
+<script src="frameworks/angularjs/angular-resource.min.js"></script>
+
+<!-- JQueryDataTable -->
+<script
+	src="http://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet"
+	href="http://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
+<!-- My Saving Apps  -->
+<script src="./js/mySavingsApp.js"></script>
+<script src="./js/controllers/fdDashBoardCtrl.js"></script>
+
+<link href="./css/mySavings.css" rel="stylesheet" type="text/css">
+
+<title>My Saving</title>
+</head>
+<body>
+	<div class="page-header" style="overflow: visible;">
+		<h1 align="center">My Savings</h1>
+	</div>
+
+
+	<div class="FixedDepositeMainDiv">
+		<div class="primary-navbar nav-collapse">
+			<div class="container">
+				<ul class="nav navbar-nav" id="menubar" style="line-height: 34px;">
+					<li><a href="#FDDashBoard">DashBoard</a></li>
+				</ul>
+			</div>
+		</div>
+		<div ng-view></div>
+		<script type="text/ng-template" id="FDDashBoard.html"></script>
+	</div>
+
+
+
+</body>
+</html>
