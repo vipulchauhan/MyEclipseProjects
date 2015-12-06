@@ -9,9 +9,10 @@ angular.module('app.controllers').controller(
 		'fdDashBoardCtrl',
 		function($scope, $http, $timeout) {
 
-			$scope.baseURL = "http://localhost:8081";
-			$scope.appContextURL = $scope.baseURL
-					+ "/mySavings-service/mySavings";
+			$scope.baseURL = "http://localhost:8080";
+			//$scope.baseURL = "http://localhost:8081";
+			//$scope.appContextURL = $scope.baseURL + "/mySavings-service/mySavings";
+			$scope.appContextURL = $scope.baseURL + "/mySavings";
 			$scope.getVixedDepositesURL = $scope.appContextURL
 					+ "/fixedDeposites";
 
