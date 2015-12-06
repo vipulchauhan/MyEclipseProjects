@@ -5,36 +5,40 @@
  * 
  */
 
- angular.module('app.controllers').controller('fdDashBoardCtrl',
+angular.module('app.controllers').controller(
+		'fdDashBoardCtrl',
 		function($scope, $http, $timeout) {
-	 			
-	 	$scope.baseURL = "http://localhost:8081";
-	 	$scope.appContextURL = $scope.baseURL + "/mySavings-service/mySavings";
-	 	$scope.getVixedDepositesURL = $scope.appContextURL + "/fixedDeposites";
-	 	
-	 	$scope.fixedDepositeArray=[];
-	 	
-		// load engine series from server
-		$scope.loadFixedDeposites  = function() {
-			console.log('loading Fixed Deposites');
-			$http.get($scope.getVixedDepositesURL).
-		    success(function(data) {
-		    	console.log('Fiexd Deposite data from Server :-');
-		    	console.log(JSON.stringify(data));
-		    	$scope.fixedDepositeArray = data;
-		    })
-		}
 
-	 $scope.tableDrawEnded = function() {
-			$timeout(function() {
+			$scope.baseURL = "http://localhost:8081";
+			$scope.appContextURL = $scope.baseURL
+					+ "/mySavings-service/mySavings";
+			$scope.getVixedDepositesURL = $scope.appContextURL
+					+ "/fixedDeposites";
+
+			$scope.fixedDepositeArray = [];
+
+			// load engine series from server
+			$scope.loadFixedDeposites = function() {
+				console.log('loading Fixed Deposites');
+				$http.get($scope.getVixedDepositesURL)
+				.success(function(data) {
+					console.log('Fiexd Deposite data from Server :-');
+					console.log(JSON.stringify(data));
+					$scope.fixedDepositeArray = data;
+				})
+				
+			}
+
+			$scope.tableDrawEnded = function() {
+				$timeout(function() {
 					$(document).ready(function() {
-				    $('#fixedDepositeTable').DataTable();
-				});
-				
-				$('[data-toggle="popover"]').popover();
-				
-			}, 0);
-		}
+						$('#fixedDepositeTable').DataTable();
+					});
+
+					$('[data-toggle="popover"]').popover();
+
+				}, 0);
+			}
 			$scope.opts = {
 				lines : 13 // The number of lines to draw
 				,
@@ -61,12 +65,12 @@
 				trail : 60 // Afterglow percentage
 				,
 				fps : 20 // Frames per second when using setTimeout() as a
-							// fallback for CSS
+				// fallback for CSS
 				,
 				zIndex : 2e9 // The z-index (defaults to 2000000000)
 				,
 				className : 'spinner' // The CSS class to assign to the
-										// spinner
+				// spinner
 				// , top: '50%' // Top position relative to parent
 				// , left: '50%' // Left position relative to parent
 				,
@@ -74,7 +78,7 @@
 				,
 				hwaccel : false
 			// Whether to use hardware acceleration
-			//, position: 'absolute' // Element positioning
+			// , position: 'absolute' // Element positioning
 			}
 
 		});

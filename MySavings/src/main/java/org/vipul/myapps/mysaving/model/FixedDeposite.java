@@ -6,9 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.vipul.myapps.mysaving.utils.SavingsUtil;
+
 @Entity
 public class FixedDeposite implements Account {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -30,13 +32,9 @@ public class FixedDeposite implements Account {
 		this.endBalance = endBalance;
 	}
 
-	
-	
 	public FixedDeposite() {
 		super();
 	}
-
-
 
 	public String getAccountNo() {
 		return accountNo;
@@ -70,16 +68,17 @@ public class FixedDeposite implements Account {
 		this.id = id;
 	}
 
-	public Date getStartDate() {
-		return startDate;
+	public String getStartDate() {
+		return SavingsUtil.dateString(startDate);
+
 	}
 
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate() {
-		return endDate;
+	public String getEndDate() {
+		return SavingsUtil.dateString(endDate);
 	}
 
 	public void setEndDate(Date endDate) {

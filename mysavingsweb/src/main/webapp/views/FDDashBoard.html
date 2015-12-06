@@ -33,7 +33,7 @@
 							</thead>
 
 							<tbody>
-								<tr ng-repeat="fixedDeposite in fixedDepositeArray"
+								<tr ng-repeat="fixedDeposite in fixedDepositeArray  "
 									ng-init="$last ? tableDrawEnded(): angular.noop()">
 									<td><input type="checkbox" name="fixedDeposite"
 										ng-model="fixedDeposite.isSelected"></td>
