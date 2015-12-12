@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "mySavings",
+    "packageName": "org.vipul.mysavings.app",
+    "packageFolder": "org/vipul/mysavings/app",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": false,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "63cb157cdb07ee167398bc87675984ccda23fcc7",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}
